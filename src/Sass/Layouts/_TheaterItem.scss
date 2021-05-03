@@ -1,0 +1,221 @@
+.theater__item {
+    .theaterItem__column{
+        padding: 0;
+        border-right: 1px solid #ebebec;
+        .theaterItem__content {
+            padding: 3rem 0;
+            padding-left: 1rem;
+            width: 100%;
+            position: relative;
+            cursor: pointer;
+            transition: all ease-in-out 0.3s;
+            opacity: 0.5;
+            display: flex;
+            &:hover{
+                opacity: 1;
+            }
+            span {
+                line-height: 1.4;
+                display: block;
+                text-transform: capitalize;
+            }
+            img {
+                max-width: 5rem;
+                width: 100%;
+                max-height: 6rem;
+            }
+            .theaterItem__span {
+                padding-left: 1rem;
+                max-width: 17rem;
+                @include styleText($fs-2,$text-base-color,$fw-bold-2);
+                .cinema {
+                    .colorCinema {
+                        display: inline-block !important;
+                        color: #8bc541;
+                    }
+                }
+                .infoCinema {
+                    color: #949494;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+                .infoCinema__Detail a {
+                    font-size: $fs-0;
+                    color: #fb4226;
+                    cursor: pointer;
+                    text-decoration: none;
+                }
+            }
+            ::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: calc(100% - 4rem);
+                transform: translateX(-50%);
+                border-bottom: 1px solid #fff;
+                border-color: rgba(238, 238, 238, 0.88);
+            }
+        }
+        .theaterItem__content.active{
+            opacity: 1;
+        }
+    }
+    .theater__wrapMovie{
+        padding-right: 0;
+        max-height: 66.5rem;
+        overflow-y: auto;
+        overflow-x: hidden;
+        .theaterItem__item {
+            .theaterItem__row{
+                width: 100%;
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 95%;
+                    border-bottom: 1px solid #fff;
+                    border-color: rgba(238, 238, 238, 0.88);
+                }
+            }
+            .theaterItem__movie {
+                padding: 2rem 0;
+                width: 100%;
+                position: relative;
+                cursor: pointer;
+                transition: all 0.2s;
+                display: flex;
+                img {
+                    max-width: 5rem;
+                    width: 100%;
+                    max-height: 5rem;
+                }
+                .theaterItem__movieSpan {
+                    width: 100%;
+                    padding-left: 1rem;
+                    padding-top: 0.5rem;
+                    .cinema__movie {
+                        display: block;
+                        @include styleText($fs-2,$text-base-color,$fw-bold-2);
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        color: #000;
+                        text-transform: capitalize;
+                        .btnCinema {
+                            background-color: #fb4226;
+                            color: #fff;
+                            border-radius: 0.4rem;
+                            padding: 0 0.5rem;
+                            margin-right: 0.5rem;
+                            @include styleText($fs-2,$text-on-base-color,$fw-bold-2);
+                            min-width: 3.3rem;
+                            text-align: center;
+                        }
+                    }
+                }
+              
+                .movie__span {
+                    margin: 0;
+                    line-height: 1.7;
+                    @include styleText($fs-1,$text-base-color,$fw-bold-1);
+                    color: #9b9b9b;
+                }
+            }
+            .theater__2D {
+                width: 100%;
+                transition: all 0.3s ease-in-out;
+                padding-top: 1rem;
+                .theaterItem__header {
+                    width: 100%;
+                    font-family: $ff-0;
+                    font-size: 16px;
+                    color: #000;
+                    margin-bottom: 1rem;
+                    font-weight: $fw-bold-3;
+                }
+                .theater__sessionsContainer{
+                    display: flex;
+                    flex-wrap: wrap;
+                    .theater__sessions {
+                        cursor: pointer;
+                        width: calc(100% / 4.5);
+                        margin-right: 1rem;
+                        margin-bottom: 1rem;
+                        .sessions__btn {
+                            width: 100%;
+                            font-size: $fs-2;
+                            font-weight: $fw-bold-1;
+                            padding: 0.5rem 0;
+                            transition: all .2s;
+                            text-decoration: none;
+                            display: block;
+                            text-align: center;
+                            background-color: rgba(246,246,246,.5);
+                            border-radius: 0.7rem;
+                            color: #9b9b9b;
+                            border: 1px solid #e4e4e4;
+                            .sessions__span {
+                                font-size: $fs-4;
+                                font-weight: $fw-bold-2;
+                                color: #108f3e;
+                            }
+                            :hover {
+                                color: #fb4226;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }    
+}
+
+@include responsive('large'){
+    .theater__item{
+        .theaterItem__column{
+            .theaterItem__content{
+                padding: 2rem 1rem;
+                ::after{
+                    width: calc(100% - 2rem);
+                }
+            }
+        }
+        .theater__wrapMovie{
+            .theaterItem__item{
+                .theater__2D{
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
+
+@include responsive('extra-large'){
+    .theater__item{
+        .theaterItem__column{
+            .theaterItem__content{
+                padding: 2rem;
+                .theaterItem__span{
+                    max-width: 19rem;
+                }
+                ::after{
+                    width: calc(100% - 4rem);
+                }
+            }
+        }
+    }
+}
+
+@include responsive('extra extra-large'){
+    .theater__item{
+        .theaterItem__column{
+            .theaterItem__content{
+                padding: 3rem 2rem;
+                .theaterItem__span{
+                    max-width: 23rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+@mixin styleText($fs,$color,$fw){
+    font-size:$fs ;
+    color: $color;
+    font-weight: $fw;
+}
+
+// $screen: tên màn hình
+@mixin responsive($screen){
+    // map-has-key: gíup kt có giá trị trong mảng
+    @if(map-has-key($map:$breakpoints, $key:$screen )){
+        // nếu tìm thấy màn hình
+        // map-get: sẽ giúp lấy giá trị màn hình
+        // value chứa kết quả lấy được
+        $value:map-get($map:$breakpoints , $key:$screen );
+        @media screen and (min-width:$value){
+            @content;
+        }
+
+    }@else{
+        @warn "Màn hình không tồn tại";
+    }
+}

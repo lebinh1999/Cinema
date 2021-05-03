@@ -1,0 +1,94 @@
+.theater{
+    .theater__container{
+        padding: 5rem 16rem;
+        height: 100%;
+        .theater__box{
+            display: flex;
+            border: 1px solid #ebebec;
+            border-radius: 0.4rem;
+            .nav-pills {
+                padding-right: 0;
+                border-right: 1px solid #ebebec;
+                .theater__icon__link{
+                    text-align: center;
+                    padding: 2rem;
+                    position: relative;
+                    opacity: 0.5;
+                    &:hover{
+                        opacity: 1;
+                    }
+                    .theater__icon {
+                        max-width: 5rem;
+                        max-height: 5rem;
+                        width: 100%;
+                        height: 100%;
+                    }     
+                }
+                ::after{
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    width: calc(100% - 4rem);
+                    transform: translateX(-50%);
+                    border-bottom: 1px solid #000;
+                    border-color: rgba(238,238,238,.88);
+                }   
+                .theater__icon__link.active,.show>.theater__icon__link{
+                    opacity: 1;
+                    background:none;
+                }   
+            }
+            .tab-content{
+                padding: 0;
+            }
+        }
+    }
+}
+
+@include responsive('extra-small'){
+    .theater{
+        display: none;
+    }
+}
+
+@include responsive('large'){
+    .theater{
+        display: block;
+        .theater__container{
+            padding: 5rem 0;
+            width: 90%;
+            margin: 0 auto;
+            .theater__box{
+                .nav-pills{
+                    ::after{
+                        width: calc(100% - 2rem);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include responsive('extra-large'){
+    .theater{
+        .theater__container{
+            width: 80%;
+            .theater__box{
+                .nav-pills {
+                    ::after{
+                        width: calc(100% - 4rem);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include responsive('extra extra-large'){
+    .theater{
+        .theater__container{
+            width: 81.5%;
+        }
+    }
+}

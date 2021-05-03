@@ -1,0 +1,3 @@
+export const FETCH_TOOL_THEATER_REQUEST = "listToolTheaterReducer/FETCH_TOOL_THEATER_REQUEST";
+export const FETCH_TOOL_THEATER_SUCCESS = "listToolTheaterReducer/FETCH_TOOL_THEATER_SUCCESS";
+export const FETCH_TOOL_THEATER_FAILED = "listToolTheaterReducer/FETCH_TOOL_THEATER_FAILED";

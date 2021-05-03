@@ -1,0 +1,161 @@
+.tool__nav {
+  position: relative;
+  z-index: 1;
+  .nav__container {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 94rem;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    height: 8rem;
+    border-radius: 0.5rem;
+    color: $text-base-color;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    & .-selectFilm,
+    .-selectCinema,
+    .-selectDate,
+    .-selectSession {
+      position: relative;
+      height: 100%;
+      .btn-secondary {
+        width: 100%;
+      }
+      .btn-secondary.dropdown-toggle {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        background-color: $header-primary;
+        text-align: left;
+        cursor: pointer;
+        padding: 7%;
+        padding-right: 2rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        @include styleText($fs-3, $text-base-color, $fw-bold-2);
+      }
+      .dropdown-menu{
+        top: 75%;
+        max-width: 61rem;
+        max-height: 30rem;
+        overflow-y: scroll;
+        li{
+          .dropdown-item{
+            padding: 0.3rem 2rem;
+            clear: both;
+            transition: all 0.2s;
+            line-height: $line-height-0;
+            white-space: nowrap;
+            @include styleText($fs-4,$dropdown-item-text,$fw-bold-1);
+            &:hover{
+              background-color: $dropdown-item-hover;
+              color: $text-on-base-color;
+            }
+          }
+        }
+      }
+      .dropdown-toggle::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        height: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        border-left: 1px solid rgba(238, 238, 238, 0.88);
+      }
+      .dropdown-toggle::after {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+      }
+    }
+    & .-selectFilm {
+      width: 30%;
+    }
+    & .-selectCinema {
+      width: calc(70% / 4);
+    }
+    & .-selectDate {
+      width: calc(70% / 4);
+    }
+    & .-selectSession {
+      width: calc(70% / 4);
+    }
+    .buy__button {
+      width: calc(70% / 4);
+      position: relative;
+      height: 50%;
+      & .-enabled {
+        background-color: $buy-button-enabled;
+        @include styleText($fs-3, $button-text-color, $fw-bold-2);
+        border: none;
+        text-transform: uppercase;
+        border-radius: 4px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 1rem 2.5rem;
+        &:hover {
+          background-color: $buy-button-enabled-hover;
+        }
+      }
+      & .disabled {
+        pointer-events: none;
+        background-color: $bg-base-color;
+        border: none;
+        text-transform: uppercase;
+        border-radius: 4px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 1rem 2.5rem;
+        @include styleText($fs-3, $button-text-color, $fw-bold-2);
+        &:hover {
+          background-color: $bg-base-color;
+        }
+      }
+    }
+    .btn-secondary:not(:disabled):not(.disabled).active,
+    .btn-secondary:not(:disabled):not(.disabled):active,
+    .show > .btn-secondary.dropdown-toggle {
+      background-color: $header-primary;
+      color: $text-base-color;
+      border: none;
+    }
+    .btn-secondary.focus,
+    .btn-secondary:focus {
+      box-shadow: none;
+      outline: none;
+      border: none;
+    }
+    .btn-secondary:not(:disabled):not(.disabled).active:focus,
+    .btn-secondary:not(:disabled):not(.disabled):active:focus,
+    .show > .btn-secondary.dropdown-toggle:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+// Responsive for screen > 320px and < 480px
+@include responsive ('extra-small'){
+  .noneOnMobile{
+    display: none;
+  }
+}
+
+// Responsive for screen > 1200px and < 1400xpx
+@include responsive ('extra-large'){
+  .noneOnMobile{
+    display: block;
+  }
+}

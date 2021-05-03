@@ -1,0 +1,102 @@
+.movie__prev__arrow {
+  width: 3rem !important;
+  height: 6rem !important;
+  text-align: center !important;
+  z-index: 1;
+}
+.movie__next__arrow {
+  width: 3rem !important;
+  height: 6rem !important;
+  text-align: center !important;
+  z-index: 1;
+}
+.movie__prev__arrow:before {
+  content: url(./../Asset/Prev__Next__Arrows/chevron-left-solid.svg) !important;
+  border: none;
+}
+.movie__next__arrow:before {
+  content: url(./../Asset/Prev__Next__Arrows/chevron-right-solid.svg) !important;
+  border: none;
+}
+
+// Responsive for screen > 320px and < 480px
+@include responsive ('extra-small'){
+  .movie__prev__arrow{
+    width: 2rem !important;
+    height: 4rem !important;
+    top: 43% !important;
+    left: 2rem !important;
+  }
+  .movie__next__arrow{
+    width: 2rem !important;
+    height: 4rem !important;
+    top: 43% !important;
+    right: 2rem !important;
+  }
+}
+
+// Responsive for screen > 480px and < 576px
+@include responsive ('very-small'){
+  .movie__prev__arrow{
+    top: 50% !important;
+    left: 2rem !important;
+  }
+  .movie__next__arrow{
+    top: 50% !important;
+    right: 2rem !important;
+  }
+}
+
+// Responsive for screen < 576px and > 240px
+@include responsive ('small'){
+    .movie__prev__arrow{
+      left: 2rem !important;
+    }
+    .movie__next__arrow{
+      right: 2rem !important;
+    }
+}
+
+// Responsive for screen > 768px and < 992px 
+@include responsive ('medium'){
+  .movie__prev__arrow{
+    left: 4rem !important;
+  }
+  .movie__next__arrow{
+    right: 4rem !important;
+  }
+}
+
+// Responsive for screen > 992px and < 1200px 
+@include responsive ('large'){
+  .movie__prev__arrow{
+    left: 3rem !important;
+  }
+  .movie__next__arrow{
+    right: 3rem !important;
+  }
+}
+
+// Responsive for screen > 1200px and < 1400px 
+@include responsive ('extra-large'){
+  .movie__prev__arrow{
+    top: 45% !important;
+    left: 4rem !important;
+  }
+  .movie__next__arrow{
+    top: 45% !important;
+    right: 4rem !important;
+  }
+}
+
+// Responsive for screen > 1400px
+@include responsive ('extra extra-large'){
+  .movie__prev__arrow{
+    top: 45% !important;
+    left: 9rem !important;
+  }
+  .movie__next__arrow{
+    top: 45% !important;
+    right: 9rem !important;
+  }
+}

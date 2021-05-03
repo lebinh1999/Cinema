@@ -1,0 +1,173 @@
+.tabPaneItem{
+    .tabPaneItem__date__container{
+        text-align: center;
+        padding-top: 1rem;
+        padding-left: 0;
+        padding-right: 0;
+        max-height: 14rem;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        .tabPaneItem__dateOfWeek{
+            width: 198.79999999999998%;
+            display: inline-flex;
+        }
+        .tabPaneItem__date{
+            transition: all 0.3s;
+            p{
+                @include styleText($fs-3,$text-base-color,$fw-bold-2);
+            }
+            .date__firstRow{
+                margin-bottom: 0;
+            }
+            &.active{
+                background-color: #fff;
+                p{
+                    color: $item-active;
+                }
+            }
+            &:hover p{
+                color: $item-active;
+            }
+        }
+    }
+}
+
+// Responsive for screen > 320px and < 480px
+@include responsive('extra-small'){
+    .tabPaneItem{
+        position: relative;
+        .tabPaneItemOnDesktop{
+            display: none;
+        }
+        .tabPaneItemOnMobile{
+            display: block;
+            .tabPaneItem__date__containerMobile{
+                text-align: center;
+                padding-top: 1rem;
+                padding-left: 0;
+                padding-right: 0;
+                max-height: 14rem;
+                overflow-y: hidden;
+                overflow-x: scroll;
+                .tabPaneItem__dateOfWeekMobile{
+                    width: 198.79999999999998%;
+                    display: inline-flex;
+                }
+                .tabPaneItem__dateMobile{
+                    cursor: pointer;
+                    width: 4.4rem;
+                    padding-left: 0;
+                    padding-right: 0;
+                    padding-top: 1.5rem;
+                    padding-bottom: 1rem;
+                    p{
+                        @include styleText(1.6rem,$text-base-color,$fw-bold-2);
+                    }
+                    .date__firstRowMobile{
+                        margin-bottom: 0;
+                    }
+                    .date__secondRowMobile{
+                        font-size: $fs-5;
+                    }
+                    &.active{
+                        background-color: #fff;
+                        p{
+                            color: $item-active;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsive for screen > 480px and < 576px
+@include responsive ('very-small'){
+    .tabPaneItem{
+        .tabPaneItemOnMobile{
+            .tabPaneItem__date__containerMobile{
+                .tabPaneItem__dateMobile{
+                    width: 6.8rem;
+                }
+            }
+        }
+    }
+}
+
+// Responsive for screen < 576px and > 240px
+@include responsive ('small'){
+    .tabPaneItem{
+        .tabPaneItemOnMobile{
+            .tabPaneItem__date__containerMobile{
+                .tabPaneItem__dateMobile{
+                    width: 8.1rem;
+                }
+            }
+        }
+    }
+}
+
+// Responsive for screen > 768px and < 992px 
+@include responsive ('medium'){
+    .tabPaneItem{
+        .tabPaneItemOnMobile{
+            .tabPaneItem__date__containerMobile{
+                .tabPaneItem__dateMobile{
+                    width: 10.8rem;
+                }
+            }
+        }
+    }
+}
+
+// Responsive for screen > 992px and < 1200px 
+@include responsive('large'){
+    .tabPaneItem{
+        margin-bottom: 1rem;
+        .tabPaneItemOnDesktop{
+            display: block;
+            .tabPaneItem__date__container{
+                .tabPaneItem__date{
+                    width: 9.5rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-bottom: 0;
+                    padding-top: 1rem;
+                }
+            }
+        }
+        .tabPaneItemOnMobile{
+            display: none;
+        }
+    }
+}
+
+// Responsive for screen > 1200px and < 1400px 
+@include responsive ('extra-large'){
+    .tabPaneItem{
+        margin-bottom: 1rem;
+        .tabPaneItemOnDesktop{
+            display: block;
+            .tabPaneItem__date__container{
+                .tabPaneItem__date{
+                    width: 9.8rem;
+                }
+            }
+        }
+    }  
+}
+
+// Responsive for screen > 1400px
+@include responsive ('extra extra-large'){
+    .tabPaneItem{
+        margin-bottom: 1rem;
+        .tabPaneItemOnDesktop{
+            display: block;
+            .tabPaneItem__date__container{
+                .tabPaneItem__date{
+                    width: 10.5rem;
+                }
+            }
+        }
+    }
+}

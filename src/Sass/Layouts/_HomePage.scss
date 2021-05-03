@@ -1,0 +1,12 @@
+section{
+    @include styleText($fs-0,$text-base-color,$fw-normal);
+}
+
+h3{
+    color: red;
+}
+
+p{
+    font-size: $fs-5;
+    color:blue;
+}

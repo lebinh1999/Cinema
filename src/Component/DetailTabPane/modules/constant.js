@@ -1,0 +1,3 @@
+export const DETAIL_ITEM_THEATER_REQUEST = "listTheaterDetailTabItemReducer/DETAIL_ITEM_THEATER_REQUEST";
+export const DETAIL_ITEM_THEATER_SUCCESS = "listTheaterDetailTabItemReducer/DETAIL_ITEM_THEATER_SUCCESS";
+export const DETAIL_ITEM_THEATER_FAILED = "listTheaterDetailTabItemReducer/DETAIL_ITEM_THEATER_FAILED";

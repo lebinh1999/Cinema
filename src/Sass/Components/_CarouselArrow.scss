@@ -1,0 +1,54 @@
+.carousel__prev__arrow{
+  left: 0rem !important;
+  width: 5rem !important;
+  height: 10rem !important;
+  line-height: 12rem !important;
+  text-align: center !important;
+  z-index: 1;
+  // transform: rotate(180deg) !important;
+}
+.carousel__next__arrow{
+  right: 0 !important;
+  width: 5rem !important;
+  height: 10rem !important;
+  line-height: 12rem !important;
+  text-align: center !important;
+}
+.carousel__prev__arrow:before{
+  content: url(./../Asset/Prev__Next__Arrows/left-arrow.png) !important;
+}
+.carousel__next__arrow:before {
+  content: url(./../Asset/Prev__Next__Arrows/right-arrow.png) !important;
+}
+
+// Responsive for screen > 320px and < 480px
+@include responsive ('extra-small'){
+  .carousel__prev__arrow{
+    top: 65% !important;
+    left: -1.5rem !important;
+  }
+  .carousel__next__arrow{
+    top: 65% !important;
+    right: -1.5rem !important;
+  }
+}
+
+// Responsive for screen > 480px and < 576px
+@include responsive ('very-small'){
+  .carousel__prev__arrow{
+    top: 60% !important;
+  }
+  .carousel__next__arrow{
+    top: 60% !important;
+  }
+}
+
+// Responsive for screen > 1200px and < 1400px 
+@include responsive ('extra-large'){
+  .carousel__prev__arrow{
+    left: -0.5rem !important;
+  }
+  .carousel__next__arrow{
+    right: -0.5rem !important;
+  }
+}

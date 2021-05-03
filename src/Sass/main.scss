@@ -1,0 +1,48 @@
+//không chứa code css, chỉ chứa đường dẫn tới các file con
+
+//Helper
+@import './Helper/variables';
+@import './Helper/mixin';
+
+//Vendor
+
+//Base
+@import './Base/reset';
+@import './Base/customize';
+
+//Components
+@import './Components/CarouselArrow';
+@import './Components/MovieArrow';
+//Layout
+@import './Layouts/NavbarHome';
+@import './Layouts/HomePage';
+@import './Layouts/MovieDetailPage';
+@import './Layouts/DetailTabPane';
+@import './Layouts/DetailTabPaneItem';
+@import './Layouts/DetailTabPaneDate';
+@import './Layouts/MovieInfo';
+@import './Layouts/MovieItem';
+@import './Layouts/Carousel';
+@import './Layouts/MovieList';
+@import './Layouts/BuyTicketTool';
+@import './Layouts/Theater';
+@import "./Layouts//TheaterItem";
+@import "./Layouts//News";
+@import "./Layouts/NewsItem";
+@import "./Layouts//MobileApp";
+@import "./Layouts/Footer";
+@import "./Layouts/Loader";
+@import "./Layouts/CheckoutPage";
+@import "./Layouts/NavbarAdmin";
+@import "./Layouts/Login";
+@import "./Layouts/Register";
+@import "./Layouts/MovieControl";
+@import "./Layouts/UserControl";
+@import "./Layouts/MovieShowControl";
+@import "./Layouts/AdminHeader";
+@import "./Components/ScrollToTop";
+@import "./Components/Modal";
+
+//Page
+
+// Theme

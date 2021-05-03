@@ -1,0 +1,186 @@
+.detail__tab{
+    .detailTab__container{
+        padding: 2rem 0;
+        height: 100%;
+        width: 70%;
+        margin: 0 auto;
+        .detailTab__box{
+            display: flex;
+            border: 1px solid #ebebec;
+            border-radius: 0.4rem;
+            background-color: #fff;
+            .detailTab__pills {
+                padding-right: 0;
+                border-right: 1px solid #ebebec;
+                .detailTab__link{
+                    text-align: left;
+                    text-transform: capitalize;
+                    padding: 2rem 0;
+                    padding-left: 2rem;
+                    position: relative;
+                    display: flex;
+                    opacity: 0.5;
+                    .detailTab__icon {
+                        max-width: 5rem;
+                        max-height: 5rem;
+                        width: 100%;
+                        height: 100%;
+                        margin-right: 1rem;
+                    }
+                    .detailTab__theaterName{
+                        @include styleText($fs-2,$text-base-color,$fw-bold-2);
+                        padding-top: 1.5rem;
+                    }
+                    &:hover{
+                        opacity: 1;
+                    }
+                }
+                ::after{
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    width: calc(100% - 4rem);
+                    transform: translateX(-50%);
+                    border-bottom: 1px solid #000;
+                    border-color: rgba(238,238,238,.88);
+                }   
+                .detailTab__link.active{
+                    opacity: 1;
+                    background:none;
+                }
+            }
+            .tab-content{
+                padding: 0;
+            }
+        }
+    }
+}
+
+// Responsive for screen > 320px and < 480px
+@include responsive('extra-small'){
+    .detail__tab{
+        .detailTab__container{
+            width: 100%;
+            padding: 2rem 0;
+            .detailTab__box{
+                .detailTab__pills{
+                    display: none;
+                }
+                .detailTab__content{
+                    display: none;
+                }
+                .detailTab__pillsMobile{
+                    display: block;
+                    padding: 0;
+                    .dropdown{
+                        .detailTab__linkMobile{
+                            text-align: left;
+                            padding: 1.5rem 1.5rem;
+                            position: relative;
+                            display: flex;
+                            opacity: 1;
+                            width: 100%;
+                            text-transform: capitalize;
+                            &::after{
+                                display: none;
+                            }
+                            .detailTab__iconMobile {
+                                max-width: 5rem;
+                                max-height: 5rem;
+                                width: 100%;
+                                height: 100%;
+                                margin-right: 1rem;
+                            }
+                            .detailTab__theaterNameMobile{
+                                @include styleText($fs-2,$text-base-color,$fw-bold-2);
+                                padding-top: 1.5rem;
+                            }
+                            .icon__right{
+                                @include styleText($fs-5,$text-base-color,$fw-bold-0);
+                                position: absolute;
+                                right: 1.5rem;
+                                top: 40%;
+                                transition: all ease-in-out 0.3s;
+                            }
+                        }
+                        .dropdown-toggle[aria-expanded="true"] .icon__right {
+                            transform: rotate(90deg);
+                        }
+                        .dropdown__menu{
+                            transform: none !important;
+                            border: none;
+                            transition: all 0.3s !important;
+                            position: relative !important;
+                            padding: 0;
+                            width: 100%;
+                            z-index: 1;
+                            .dropdown__item{
+                                padding: 0;
+                            }   
+                        }
+                    }
+                    ::after{
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        width: 100%;
+                        transform: translateX(-50%);
+                        border-bottom: 1px solid #000;
+                        border-color: rgba(238,238,238,.88);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsive for screen > 992px and < 1200px
+@include responsive('large'){
+    .detail__tab{
+        width: 90%;
+        margin: 0 auto;
+        .detailTab__container{
+            .detailTab__box{
+                .detailTab__pills{
+                    display: block;
+                }
+                .detailTab__content{
+                    display: block;
+                }
+                .detailTab__pillsMobile{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+// Responsive for screen > 1200px and < 1400px
+@include responsive('extra-large'){
+    .detail__tab{
+        width: 70%;
+        .detailTab__container{
+            .detailTab__box{
+                .detailTab__pills{
+                    display: block;
+                }
+                .detailTab__content{
+                    display: block;
+                }
+                .detailTab__pillsMobile{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@include responsive('extra extra-large'){
+    .detailTab{
+        .detailTab__container{
+            width: 81.5%;
+        }
+    }
+}

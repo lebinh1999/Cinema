@@ -1,0 +1,80 @@
+.adminHeader{
+    width: 80%;
+    position: fixed;
+    background: #3e515d;
+    right: 0;
+    top: 0;
+    height: 6rem;
+    display: flex;
+    z-index: 1051;
+    box-shadow: 0 0 1.5rem rgba(0,0,0,0.3);
+    .searchForm{
+        width: 83%;
+        display: flex;
+        .form__searchArea{
+            height: 100%;
+            padding: 0.75rem 1rem;
+            border-width: 0;
+            border-radius: 0;
+            color: #fff;
+            background-color: rgba(255, 255, 255, .1);
+            border-color: rgba(255, 255, 255, .1);
+            transition: all 0.5s;
+            @include styleText($fs-3,$text-base-color,$fw-bold-2);
+            &:hover{
+                background-color: #fff;
+                color: $text-base-color;
+            }
+            &:focus{
+                box-shadow: none;
+                background-color: #fff;
+            }
+        }
+        .btnSearch__text{
+            cursor: pointer;
+            width: 5%;
+            border: none;
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            .search__icon{
+                font-size: $fs-4;
+                color: $text-on-base-color;
+            }
+        }
+    }
+    
+    
+    .adminPage__user{
+        width: 17%;
+        display: flex;
+        padding: 0 1.5rem;
+        cursor: pointer;
+        .adminPage__avatar{
+            line-height: 6rem;
+            img{
+                border-radius: 100%;
+                width: 3.5rem;
+                height: 3.5rem;
+                margin-right: 1rem;
+            }
+        }
+        .adminPage__userName{
+            text-decoration: none;
+            line-height: 6rem;
+            text-transform: capitalize;
+            @include styleText($fs-3,$text-on-base-color,$fw-bold-2);
+        }
+    }
+}
+#popup-root{
+    .popup-content{
+        .logOutAdmin{
+            cursor: pointer;
+            text-decoration: none;
+            @include styleText($fs-1,$text-base-color,$fw-bold-2);
+            &:hover{
+                color: $item-active;
+            }
+        }
+    }
+}

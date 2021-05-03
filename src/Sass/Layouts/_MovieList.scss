@@ -1,0 +1,156 @@
+.movie{
+    padding-top: 1rem;
+    z-index: 0;
+    background-image: url(./../Asset/img/bg5.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+    .movie__card__container{
+        overflow: hidden;
+        width: 86.4%;
+        margin: 0 auto;
+        .nav-tabs.navCenter{
+            text-align: center;
+            border: none;
+            justify-content: center;
+            .nav-item{
+                &:focus{
+                    outline: none;
+                }
+                .nav-link{
+                    @include styleText($fs-6,$bg-base-color,$fw-bold-2);
+                    transition: all 0.5s;
+                    padding: 0;
+                    position: relative;
+                    // nav-link underline
+                    &::after{
+                        background: none repeat scroll 0 0 transparent;
+                        bottom: 0;
+                        content: "";
+                        display: block;
+                        height: 0.2rem;
+                        left: 50%;
+                        position: absolute;
+                        background-color: $bg-base-color;
+                        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+                        width: 0%;
+                    }
+                    &:hover{
+                        color:$item-active;
+                        border: 1px solid transparent;
+                    }
+                    &:hover::after{
+                        width: 100%;
+                        left: 0;
+                    }
+                }
+                .nav-link.active{
+                    color:$item-active;
+                    background-color: transparent;
+                    border: 1px solid transparent;
+                    &::after{
+                        width: 100%;
+                        left: 0;
+                    }
+                }
+            }
+        }
+        .tab-content{
+            .tab-pane{
+                transition: all ease-in-out 0.3s;
+            }
+        }
+    } 
+}
+
+// Responsive for screen > 320px and < 480px
+@include responsive ('extra-small'){
+    .movie{
+        background-attachment: inherit;
+        padding: 2rem 0;
+        .movie__card__container{
+            width: 100%;
+            .nav-tabs.navCenter{
+                .nav-item{
+                    &:nth-child(1){
+                        margin-right: 1rem;
+                    }
+                    &:nth-child(2){
+                        margin-left: 1rem;
+                    }
+                    .nav-link{
+                        font-size: $fs-4;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsive for screen > 480px and < 576px
+@include responsive ('very-small'){
+    .movie{
+        .movie__card__container{
+            .nav-tabs.navCenter{
+                .nav-item{
+                    &:nth-child(1){
+                        margin-right: 1.25rem;
+                    }
+                    &:nth-child(2){
+                        margin-left: 1.25rem;
+                    }
+                    .nav-link{
+                        font-size: $fs-4;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsive for screen > 576px and < 768px
+@include responsive ('small'){
+    .movie{
+        padding: 3rem 0;
+        .movie__card__container{
+            .nav-tabs.navCenter{
+                .nav-item{
+                    .nav-link{
+                        font-size: $fs-5;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsive for screen > 768px and < 992px 
+@include responsive ('medium'){
+    .movie{
+        .movie__card__container{
+            .nav-tabs.navCenter{
+                .nav-item{
+                    .nav-link{
+                        font-size: $fs-6;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsive for screen > 992px and < 1200px 
+@include responsive ('large'){
+    .movie{
+        background-attachment: fixed;
+    }
+}
+
+// Responsive for screen > 1200px and < 1400px 
+@include responsive ('extra-large'){
+    .movie{
+        padding: 10rem 0 3rem 0;
+    }
+}
